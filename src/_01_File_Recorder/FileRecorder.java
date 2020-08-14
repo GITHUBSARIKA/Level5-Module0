@@ -11,7 +11,7 @@ public class FileRecorder {
 	public static void main(String[] args) {
 		String message=JOptionPane.showInputDialog("Type something in");{
 	try {
-		FileWriter FileRecord=new FileWriter(message);
+		FileWriter FileRecord=new FileWriter("fileRecord");
 		
 	FileRecord.write(message);
 	FileRecord.close();
