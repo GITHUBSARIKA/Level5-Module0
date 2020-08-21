@@ -1,6 +1,15 @@
 package _03_To_Do_List;
 
-public class ToDoList {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ToDoList implements ActionListener{
 	/*
 	 * Create a program with five buttons, add task, view tasks, remove task, save list, and load list. 
 	 *
@@ -20,5 +29,40 @@ public class ToDoList {
 	 * 		Create a JOptionPane to Prompt the user for the location of the file and load the list from that file
 	 * 
 	 * When the program starts, it should automatically load the last saved file into the list. 
+	 *
 	 */
+	public ToDoList(){
+		JFrame frame=new JFrame();
+		JPanel panel=new JPanel();
+		JButton addTask=new JButton("Add Task");
+		JButton viewTask=new JButton("View Task");
+		JButton removeTask=new JButton("Remove Task");
+		JButton saveList=new JButton("Save List");
+		JButton loadList=new JButton("Load List");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		panel.add(addTask);
+		panel.add(viewTask);
+		panel.add(removeTask);
+		panel.add(saveList);
+		panel.add(loadList);
+		addTask.addActionListener(this);
+		viewTask.addActionListener(this);
+		removeTask.addActionListener(this);
+		saveList.addActionListener(this);
+		loadList.addActionListener(this);
+		frame.pack();
+		frame.setVisible(true);
+	}
+	public static void main(String[] args) {
+		ToDoList todo=new ToDoList();
+		ArrayList<String> tasks=new ArrayList<String>();
+		
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO o-generated method stub
+	
+	}
 }

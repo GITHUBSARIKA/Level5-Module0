@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 public class FileDecryptor {
 	/*
 	 * Decryption is the process of taking encoded or encrypted text or other data
@@ -25,15 +27,33 @@ public class FileDecryptor {
 	 * the message, then display it to the user in a JOptionPane.
 	 */
 	public static void main(String[] args) {
-		
+		String newFileContent="";
 	try {
-		BufferedReader br=new BufferedReader(new FileReader("Decryption"));
+		BufferedReader br=new BufferedReader(new FileReader("File Encryptor"));
 		String FileContent="";
 		String line=br.readLine();
 		while(line!=null) {
 			FileContent+=line;
 			line=br.readLine();
 		}
+		for (int i = 0; i < FileContent.length(); i++) {
+			int keys=FileEncryptor.key;
+			char character=FileContent.charAt(i);
+			
+			if(Character.isAlphabetic(character)) {
+				char result=character;
+				if(result<'a'+keys) {
+					result+=(26 - keys);
+				}else {
+					result=(char)(character-keys);
+				}
+				newFileContent+=result;
+			}else {
+				newFileContent+=character;
+			}
+			
+		}
+		JOptionPane.showMessageDialog(null, newFileContent);
 	}catch(FileNotFoundException el){
 		el.printStackTrace();
 	}catch(IOException e) {

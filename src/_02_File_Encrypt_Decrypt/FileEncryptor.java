@@ -26,19 +26,20 @@ public class FileEncryptor {
 	 * Use the key to shift each letter in the users input and save the final result to a file.
 	 *
 	 */
+	static int key = 4;
+	
 	public static void main(String[] args) {
      String message=JOptionPane.showInputDialog("Type a sentence");
-     String key=JOptionPane.showInputDialog("Type a number,");
-     int keys=Integer.parseInt(key);
+     
      String mmessage="";
      for (int i = 0; i < message.length(); i++) {
     	 char character=message.charAt(i);
     	 if(Character.isAlphabetic(character)) {
     		 char result = character;
-    		 if(result > 'z' - keys) {
-    			 result -= (26 - keys);
+    		 if(result > 'z' - key) {
+    			 result -= (26 - key);
     		 }else {
-    			 result = (char)(character + keys);
+    			 result = (char)(character + key);
     		 }
     		  mmessage+= result;
     	 }else {
