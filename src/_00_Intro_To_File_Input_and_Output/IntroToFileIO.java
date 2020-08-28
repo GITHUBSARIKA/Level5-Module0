@@ -35,7 +35,7 @@ public class IntroToFileIO {
 				fileContents += line;
 				line = br.readLine();
 			}
-			
+			System.out.println(fileContents);
 			br.close();
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block

@@ -29,5 +29,8 @@ public class DirectoryIterator {
 		 * Be aware of possible directories inside of directories.
 		 * (e.g //Copyright © 2019 FirstName LastName)
 		 */
+		JFileChooser chooseFiles=new JFileChooser();
+		chooseFiles.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+		int returnVal= choose
 	}
 }
