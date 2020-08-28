@@ -31,14 +31,19 @@ public class ToDoList implements ActionListener{
 	 * When the program starts, it should automatically load the last saved file into the list. 
 	 *
 	 */
+	JButton addTask;
+	JButton viewTask;
+	JButton removeTask;
+	JButton saveList;
+	JButton loadList;
 	public ToDoList(){
 		JFrame frame=new JFrame();
 		JPanel panel=new JPanel();
-		JButton addTask=new JButton("Add Task");
-		JButton viewTask=new JButton("View Task");
-		JButton removeTask=new JButton("Remove Task");
-		JButton saveList=new JButton("Save List");
-		JButton loadList=new JButton("Load List");
+		addTask=new JButton("Add Task");
+		viewTask=new JButton("View Task");
+		removeTask=new JButton("Remove Task");
+		saveList=new JButton("Save List");
+		loadList=new JButton("Load List");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(panel);
 		panel.add(addTask);
@@ -63,6 +68,8 @@ public class ToDoList implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO o-generated method stub
-	
+	     if(arg0.getSource() == addTask) {
+	    	 String addedTask=JOptionPane.showInputDialog("Type a task in.");
+	     }
 	}
 }
