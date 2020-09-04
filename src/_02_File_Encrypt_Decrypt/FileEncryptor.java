@@ -56,3 +56,4 @@ public class FileEncryptor {
      }
 	}
 }
+//Copyright © 2019 Sarika Patil
